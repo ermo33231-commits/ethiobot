@@ -1,7 +1,8 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+import os
 
-TOKEN = "8501813621:AAGHYhSSZRR2qCthFsTnU6WDaa7v-bI60cY"
+TOKEN = os.getenv("8501813621:AAGHYhSSZRR2qCthFsTnU6WDaa7v-bI60cY")
 
 waiting_users = []
 active_chats = {}
@@ -83,6 +84,6 @@ app.add_handler(CommandHandler("next", next_chat))
 app.add_handler(CommandHandler("stop", stop))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-print("🔥 LAWILET BOT RUNNING 🔥")
+print("🔥 BOT RUNNING ON RAILWAY 🔥")
 
 app.run_polling()
